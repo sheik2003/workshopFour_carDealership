@@ -220,6 +220,7 @@ public class UserInterface {
         System.out.println("Enter Vin of car to remove: ");
         int vin = scanner.nextInt();
         dealership.removeVehicle(vin);
+        DealershipFileManager.saveDealership(dealership);
     }
 
     public static void displayVehicles(ArrayList<Vehicle> vehicles) {
