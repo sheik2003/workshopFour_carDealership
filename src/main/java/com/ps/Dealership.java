@@ -102,15 +102,20 @@ public class Dealership {
 }
     public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
+        System.out.println("Added successfully");
     }
 
-    //TODO : make helper function for printing the loop part
+    public void removeVehicle(int vin){
+
+        for (Vehicle vehicle : inventory){
+            if (vehicle.getVin() == vin){
+                inventory.remove(vehicle);
+            }
+        }
+
+    }
 
 
-// TODO
-//    get VehiclesByMileage(min, max) : List<Vehicle>
-//    get VehiclesByType(vehicleType) : List<Vehicle>
-//    remove Vehicle(vehicle)
 
     public String getName() {
         return name;
