@@ -68,10 +68,27 @@ public class Dealership {
         return filteredByColor ;
     }
 
-    public ArrayList<Vehicle> getAllVehicles(){
-        return inventory;
+    public ArrayList<Vehicle> vehiclesByMilage(int min , int max) {
+
+        ArrayList<Vehicle> filteredByMileage = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            double vehicleMileage = vehicle.getOdometer();
+
+            if (vehicleMileage >= min && vehicleMileage <= max) {
+                filteredByMileage.add(vehicle);
+            }
+
+
+        }
+        return filteredByMileage;
+
     }
 
+
+    public ArrayList<Vehicle> getAllVehicles(){
+        return inventory;
+
+}
     public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
     }
