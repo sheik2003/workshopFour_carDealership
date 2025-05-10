@@ -109,10 +109,36 @@ public class UserInterface {
 
     }
     private void processGetByYearRequest(){
+        System.out.println("--------Display vehicles by year--------");
+        System.out.print("Min: ");
+        int min = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Max: ");
+        int max = scanner.nextInt();
+        scanner.nextLine();
+
+        ArrayList<Vehicle> filteredByYear = dealership.vehiclesByYear(min, max);
+
+        displayVehicles(filteredByYear);
+
 
     }
     private void processGetByColorRequest(){
 
+
+        System.out.println("--------Display vehicles by year--------");
+        System.out.print("Min: ");
+        int min = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Max: ");
+        int max = scanner.nextInt();
+        scanner.nextLine();
+
+        ArrayList<Vehicle> filteredByYear = dealership.vehiclesByYear(min, max);
+
+        displayVehicles(filteredByYear);
     }
     private void processGetByMileageRequest(){
 
