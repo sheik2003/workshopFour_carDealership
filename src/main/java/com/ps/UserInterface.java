@@ -154,6 +154,16 @@ public class UserInterface {
     }
     private void processGetByVehicleTypeRequest(){
 
+        System.out.println("--------Display vehicles by Vehicle Type--------");
+
+        System.out.print("VehicleType: ");
+        scanner.nextLine();
+        String vehicleType = scanner.nextLine();
+
+        ArrayList<Vehicle> filteredByVehicleType = dealership.VehicleType(vehicleType);
+
+        displayVehicles(filteredByVehicleType);
+
     }
     private void processGetAllVehiclesRequest(){
         ArrayList<Vehicle> vehicles = dealership.getAllVehicles();
