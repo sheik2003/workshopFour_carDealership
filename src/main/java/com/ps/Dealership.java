@@ -17,7 +17,18 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle> vehiclesByPrice(double min, double max){
-        return null;
+
+    ArrayList<Vehicle> fitleredPrice = new ArrayList<>();
+
+    for (Vehicle vehicle : inventory){
+        double vehiclePrice = vehicle.getPrice();
+
+        if (vehiclePrice >= min && vehiclePrice <= max){
+            fitleredPrice.add(vehicle);
+        }
+
+    }
+        return fitleredPrice ;
     }
 
     public ArrayList<Vehicle> vehiclesByMakeModel(String make, String model){
@@ -39,6 +50,8 @@ public class Dealership {
     public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
     }
+
+    //TODO : make helper function for printing the loop part
 
 
 // TODO

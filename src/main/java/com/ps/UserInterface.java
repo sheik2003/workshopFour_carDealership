@@ -1,5 +1,6 @@
 package com.ps;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -75,7 +76,6 @@ public class UserInterface {
 
 
     private void processGetByPriceRequest(){
-        // TODO: Ask the user for a starting price and ending price
         System.out.println("--------Display vehicles by price--------");
         System.out.print("Min: ");
         double min = scanner.nextDouble();
@@ -83,12 +83,11 @@ public class UserInterface {
         System.out.print("Max: ");
         double max = scanner.nextDouble();
 
-        // ArrayList<Vehicle> filteredVehicles = dealership.getVehiclesByPrice(startingPrice, endingPrice);
         ArrayList<Vehicle> filteredVehicles = dealership.vehiclesByPrice(min, max);
 
-        // Display vehicles with for loop
         displayVehicles(filteredVehicles);
     }
+
     private void processGetByMakeModelRequest(){
 
     }
