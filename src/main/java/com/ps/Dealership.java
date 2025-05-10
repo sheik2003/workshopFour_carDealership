@@ -57,7 +57,15 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle> vehiclesByColor(String color){
-        return null;
+
+        ArrayList<Vehicle> filteredByColor = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory){
+            if (vehicle.getColor().equalsIgnoreCase(color)){
+                filteredByColor.add(vehicle);
+            }
+        }
+        return filteredByColor ;
     }
 
     public ArrayList<Vehicle> getAllVehicles(){

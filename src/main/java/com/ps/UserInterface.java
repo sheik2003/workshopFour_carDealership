@@ -127,18 +127,15 @@ public class UserInterface {
     private void processGetByColorRequest(){
 
 
-        System.out.println("--------Display vehicles by year--------");
-        System.out.print("Min: ");
-        int min = scanner.nextInt();
+        System.out.println("--------Display vehicles by Color--------");
+
+        System.out.print("Color: ");
         scanner.nextLine();
+        String color = scanner.nextLine();
 
-        System.out.print("Max: ");
-        int max = scanner.nextInt();
-        scanner.nextLine();
+        ArrayList<Vehicle> filteredByColor = dealership.vehiclesByColor(color);
 
-        ArrayList<Vehicle> filteredByYear = dealership.vehiclesByYear(min, max);
-
-        displayVehicles(filteredByYear);
+        displayVehicles(filteredByColor);
     }
     private void processGetByMileageRequest(){
 
