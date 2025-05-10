@@ -79,16 +79,33 @@ public class UserInterface {
         System.out.println("--------Display vehicles by price--------");
         System.out.print("Min: ");
         double min = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.print("Max: ");
         double max = scanner.nextDouble();
+        scanner.nextLine();
 
-        ArrayList<Vehicle> filteredVehicles = dealership.vehiclesByPrice(min, max);
 
-        displayVehicles(filteredVehicles);
+        ArrayList<Vehicle> filteredByPriceVehicles = dealership.vehiclesByPrice(min, max);
+
+        displayVehicles(filteredByPriceVehicles);
     }
 
     private void processGetByMakeModelRequest(){
+
+        System.out.println("--------Display vehicles by make model--------");
+
+        //for spillover
+        scanner.nextLine();
+
+        System.out.print("Make: ");
+        String make = scanner.nextLine();
+
+        System.out.print("Model: ");
+        String model = scanner.nextLine();
+
+        ArrayList<Vehicle> filteredVehiclesByModel = dealership.vehiclesByMakeModel(make,model);
+        displayVehicles(filteredVehiclesByModel);
 
     }
     private void processGetByYearRequest(){
