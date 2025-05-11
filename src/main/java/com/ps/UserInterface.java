@@ -224,8 +224,26 @@ public class UserInterface {
     }
 
     public static void displayVehicles(ArrayList<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found.");
+            return;
+        }
+
+        System.out.printf("%-6s %-6s %-10s %-12s %-10s %-10s %-10s %-10s\n",
+                "VIN", "Year", "Make", "Model", "Type", "Color", "Miles", "Price");
+
+        System.out.println("-------------------------------------------------------------------------------");
+
         for (Vehicle vehicle : vehicles) {
-            System.out.print(vehicle);
+            System.out.printf("%-6d %-6d %-10s %-12s %-10s %-10s %-10d $%-9.2f\n",
+                    vehicle.getVin(),
+                    vehicle.getYear(),
+                    vehicle.getMake(),
+                    vehicle.getModel(),
+                    vehicle.getVehicleType(),
+                    vehicle.getColor(),
+                    vehicle.getOdometer(),
+                    vehicle.getPrice());
         }
     }
 
