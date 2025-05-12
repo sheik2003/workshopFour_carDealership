@@ -36,6 +36,11 @@ public class UserInterface {
             System.out.println("0. Exit");
 
             System.out.print("Command: ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.next(); // clear the invalid input
+                System.out.print("Command: ");
+            }
             mainMenuCommand = scanner.nextInt();
 
             switch (mainMenuCommand) {
@@ -85,6 +90,10 @@ public class UserInterface {
         System.out.print("Max: ");
         double max = scanner.nextDouble();
         scanner.nextLine();
+        if (min > max) {
+            System.out.println("Error: Minimum value cannot be greater than maximum.");
+            return;
+        }
 
 
         ArrayList<Vehicle> filteredByPriceVehicles = dealership.vehiclesByPrice(min, max);
@@ -207,6 +216,16 @@ public class UserInterface {
         System.out.println("Enter price: ");
         double price = scanner.nextDouble();
         scanner.nextLine();
+
+        if (vin < 0 || year < 1886 || odometer < 0 || price < 0) {
+            System.out.println("Invalid vehicle data. Please try again.");
+            return;
+        }
+        if (make.isEmpty() || model.isEmpty() || vehicleType.isEmpty() || color.isEmpty()) {
+            System.out.println("Make, model, type, and color cannot be empty.");
+            return;
+        }
+
 
         Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
         dealership.addVehicle(vehicle);
